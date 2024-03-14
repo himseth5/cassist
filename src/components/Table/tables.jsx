@@ -1,9 +1,7 @@
-
 import React from "react";
 import { FaTimes, FaCheck } from "react-icons/fa";
-const Table = ({tableData}) => {
-
-    
+const Table = ({ tableData }) => {
+  console.log(tableData, "table ka data  bhai ");
   return (
     <div className="accordion-content">
       <table>
@@ -18,8 +16,10 @@ const Table = ({tableData}) => {
         </thead>
         <tbody>
           {tableData?.map((item, index) => (
-            <tr>
-              <td>{item.claimLine}</td>
+            <tr key={index}>
+              <td>
+                <span key={index}>{item.claimLine}</span>
+              </td>
               {item.selected === "yes" ? (
                 <td>
                   <FaCheck />
